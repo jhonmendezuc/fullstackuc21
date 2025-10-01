@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi primera web</title>
+    <style>
+      body {
+        background-color: rgb(255, 255, 255);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Titulos principales😀</h1>
+    <h2>subtitulos</h2>
+    <h3>subtitulos</h3>
+    <h4>subtitulos</h4>
+    <h5>subtitulos</h5>
+    <h6>subtitulos</h6>
+    <p href="uno">esto es un <strong> parrafo </strong></p>
+    <a href="prueba.html">esto es un enlace a otra pagina</a>
+    <ul>
+      <li><span> > </span>item1</li>
+      <li>item2</li>
+      <li>item3 <a href="prueba.html">enlace</a></li>
+    </ul>
+    <ul>
+      <li>item 2.2</li>
+    </ul>
+    <img
+      src="	https://www.charset.org/img/charset.svg?v=2"
+      alt="imagen de teclado"
+    />
+    <details>
+      <summary>ver mas <span style="color: red"> informacion </span></summary>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum ex
+        vitae, dolorum itaque iure quisquam error, incidunt omnis quaerat optio
+        aliquid quibusdam magnam rem inventore doloremque. Similique culpa
+        tenetur incidunt!
+      </p>
+    </details>
+    <form action="prueba.html">
+      <label for="">nombre completo</label>
+      <input type="text" placeholder="ingrese su nombre" required /> <br />
+      <input type="password" placeholder="ingrese su pass" />
+      <input type="color" /><br />
+      <input type="date" /><br />
+      <input type="email" /><br />
+      <label for="mostrar">estudiante </label>
+      <input id="mostrar" type="checkbox" />
+      <label for="">ingrese su ciudad</label>
+      <select name="ciudad" id="ciudad" size="1">
+        <option value="bogota">bogota</option>
+        <option value="bogota">quito</option>
+        <option value="bogota">medellin</option>
+      </select>
+      <input type="submit" /><br />
+    </form>
+
+    <label for="">Ventana de dialogo</label>
+    <dialog id="miVentana">
+      <p>esta es una ventana</p>
+      <button onclick="miVentana.close()">Cerrar ventana</button>
+    </dialog>
+    <button onclick="miVentana.showModal()">Abrir ventana</button>
+
+    <label for="">barras de progreso</label>
+    <meter value="0.8" min="0" max="1"></meter>
+    <br />
+    <label for="">tablas</label>
+    <table border="1px">
+      <tr>
+        <td>nombre</td>
+        <td>apelido</td>
+        <td>edad</td>
+      </tr>
+      <tr>
+        <td>jhon</td>
+        <td>mendez</td>
+        <td>45</td>
+      </tr>
+    </table>
+  </body>
+</html>
