@@ -1,0 +1,42 @@
+/*
+
+expresiones de estilos de css
+
+selector{
+  propiedad: valorPropiedad,
+  propiedad: valorPropiedad,
+}
+
+selectores: body, p, h1, table, input, etc
+propiedades: elementos de cambio(color, ancho, alto, margen, relleno, colorFondo, bordes, letra, etc)
+valoresPropiedad: pixel(numericos-pulgadas, cm, porcentajes,etc),
+*/
+
+h1{
+  color:rgb(166, 43, 43);
+  margin: 50px; /* margen simetrica*/
+  padding: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px;
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  border-style: solid;
+  border-radius: 20px;
+  width: 300px;/* absoluto*/
+  background-color: rgb(236, 214, 214);
+  font-size: 50px;
+  display: block;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  height: 140px;
+  text-align: center;
+  box-shadow: 1px 1px 3px red
+  
+/* width: 300%; relativo*/
+
+  /*border: 0px 0px 1px 0px solid*/
+  /*color: #de3131;
+  color: rgb(221, 41, 41) */
+}
+

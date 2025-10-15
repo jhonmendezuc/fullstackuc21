@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="./estilos/login.css" />
+  </head>
+  <body>
+    <div class="page-template">
+      <div class="main-content">
+        <div class="atom-icon icon-rounded">
+          <img src="./usuario.png" width="30px" alt="logo" />
+        </div>
+        <label class="atom--label" for="">Ingrese su correo</label>
+        <input class="atom--input" type="email" />
+        <label class="atom--label" for="">Ingres su contraseña</label>
+        <input class="atom--input" type="text" />
+
+        <button class="atom--button btn-primary">Ingresar</button>
+        <a id="btn-registrar" class="atom--button">Registrar</a>
+      </div>
+    </div>
+    <div id="lista-usuarios">
+      <h3>Usuarios registrados</h3>
+      <ul id="usuarios"></ul>
+    </div>
+    <footer>
+      <p>creado por Jhon Mendez</p>
+      <i>2025</i>
+      <a href="">terminos y conidiones</a>
+    </footer>
+    <dialog id="dialogo-registro">
+      <form id="frm-registro" action="">
+        <h3>Registro de usuarios</h3>
+        <label for="">Nombre</label>
+        <input id="txt-nombre" type="text" value="" />
+        <label for="">Correo</label>
+        <input id="txt-correo" type="text" value="" />
+        <label for="">Contraseña</label>
+        <input id="txt-contrasena" type="password" value="" />
+        <button id="btn-guardar">Guardar</button>
+        <button id="btn-cancelar">Cancelar</button>
+      </form>
+    </dialog>
+
+    <script src="./logica/Usuario.js"></script>
+    <script src="./logica/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,105 @@
+/*definir varias de ambito global*/
+:root {
+  --color-primario: #042940;
+  --color-secundario: #005C53;
+  --color-fondo: #9FC131;
+  --color-enfasis: #DBF227;
+}
+
+/* 1. ATOMOS */
+.atom--button{
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.8s;
+}
+
+.btn-primary{
+  background-color: var(--color-fondo);
+}
+
+.btn-primary:hover{
+  background-color: var(--color-primario);
+  color: azure;
+}
+
+.btn-secundary {
+  background-color: var(--color-secundario);
+}
+
+.atom--label{
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--color-primario);
+}
+
+.atom--input{
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--color-fondo);
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* moleculas*/
+
+.atom-icon{
+  background-color: var(--color-secundario)
+}
+
+.icon-rounded{
+  width: 50px;
+  height: 50px;
+  display: flex ; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.page-template{
+ 
+ display: flex;
+ justify-content: center;
+ min-height: 100vh;
+ align-items: center;
+}
+
+.page-template .main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    
+}
+
+body{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: var(--color-enfasis);
+}
+
+footer{
+  justify-content: center;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+
+
+dialog{
+  border: none;
+  border-radius: 10px;
+  padding: 20px; 
+}
+
+dialog::backdrop{
+  background-color: rgba(0, 0, 0, 0.5);
+}
