@@ -1,0 +1,32 @@
+{
+  "name": "todolist_be",
+  "version": "1.0.0",
+  "description": "todolist app fullstack 21",
+  "keywords": [
+    "nodejs",
+    "mongo",
+    "prisma",
+    "app",
+    "capas",
+    "jwt"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "github.com/jhonmendezuc/fullstackuc21.git"
+  },
+  "license": "MIT",
+  "author": "jhon mendez, grupo fullstack21",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "node test/test.js",
+    "build":"tsc"
+  }, 
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
