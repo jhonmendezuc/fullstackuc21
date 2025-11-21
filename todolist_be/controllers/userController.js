@@ -11,6 +11,48 @@ const users = [
     description: "This is task 2",
     completed: false,
   },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
+  {
+    id: 2,
+    name: "user 2",
+    description: "This is task 2",
+    completed: false,
+  },
 ];
 
 function getUsers(req, res) {

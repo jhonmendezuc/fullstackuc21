@@ -1,40 +1,30 @@
-const tasks = [
-  {
-    id: 1,
-    name: "Task 1",
-    description: "This is task 1",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "Task 2",
-    description: "This is task 2",
-    completed: false,
-  },
-];
+import taskService from "../services/taskService.js";
 
-function getTasks(req, res) {
-  const data = tasks;
+async function getTasks(req, res) {
+  const data = await taskService.getTask();
   res.status(200).json({
     message: "list task",
     data: data,
   });
 }
-function creatTask(req, res) {
-  const data = req.body;
-  tasks.push(data);
+
+async function creatTask(req, res) {
+  const body = req.body;
+  const data = await taskService.createTask(body);
   res.status(201).json({ message: "Task created", data: data });
 }
-function updateTasks(req, res) {
-  const data = req.body;
+
+async function updateTasks(req, res) {
+  const body = req.body;
   const id = req.params.id;
-  console.log(req);
-  console.log(data);
-  console.log(id);
+  const data = await taskService.updateTask(id, body);
+  res.status(200).json({ message: "Task update", data: data });
 }
-function deleteTasks(req, res) {
+
+async function deleteTasks(req, res) {
   const id = req.params.id;
-  console.log(id);
+  const data = await taskService.deleteTask(id);
+  res.status(200).json({ message: "Task delete", data: data });
 }
 
 export default {
