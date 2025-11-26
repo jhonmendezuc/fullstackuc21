@@ -1,90 +1,48 @@
-const users = [
-  {
-    id: 1,
-    name: "user 1",
-    description: "This is task 1",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-  {
-    id: 2,
-    name: "user 2",
-    description: "This is task 2",
-    completed: false,
-  },
-];
+import userService from "../services/userService.js";
 
-function getUsers(req, res) {
-  const data = users;
+async function getUsers(req, res) {
+  const data = await userService.getUser();
   res.status(200).json({
-    message: "list task",
+    message: "list users",
     data: data,
   });
 }
-function creatUsers(req, res) {
-  const data = req.body;
-  users.push(data);
+/*
+crear usuarios
+{
+"name" :  "{{$randomFullName}}",
+"email" : "{{$randomEmail}}",
+"password": "123"
+}
+*/
+async function creatUsers(req, res) {
+  const body = req.body;
+  const data = await userService.createUser(body);
   res.status(201).json({ message: "Users created", data: data });
 }
-function updateUsers(req, res) {
-  const data = req.body;
+async function updateUsers(req, res) {
+  const body = req.body;
   const id = req.params.id;
-  console.log(req);
-  console.log(data);
-  console.log(id);
+  const data = await userService.updateUser(body, id);
+  res.status(201).json({ message: "Users updated", data: data });
 }
-function deleteUsers(req, res) {
+async function deleteUsers(req, res) {
   const id = req.params.id;
-  console.log(id);
+  const data = await userService.deleteUser(id);
+  res.status(201).json({ message: "User delete", data: data });
 }
 
-function logIn() {}
-function logOut() {}
+async function logIn(req, res) {
+  const body = req.body;
+  const data = await userService.login(body);
+  res.status(200).json(data);
+}
+async function logOut() {}
 
 export default {
   getUsers,
   creatUsers,
   updateUsers,
   deleteUsers,
+  logIn,
 };
