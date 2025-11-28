@@ -55,7 +55,9 @@ async function login(body) {
     const matchPassword = await passwordCompare(body.password, data.password);
     if (matchPassword) {
       data.password = "";
-      const token = jwt.sign(data, process.env.SECRET_KEY);
+      const token = jwt.sign(data, process.env.SECRET_KEY, {
+        expiresIn: "1h",
+      });
       return { message: "Inicio de sesión Exitoso", data: token };
     }
     return { message: "Contraseña incorrecta", data: null };
