@@ -35,7 +35,11 @@ async function deleteUsers(req, res) {
 async function logIn(req, res) {
   const body = req.body;
   const data = await userService.login(body);
-  res.status(200).json(data);
+  if (data.data) {
+    res.status(200).json(data);
+  } else {
+    res.status(401).json(data);
+  }
 }
 async function logOut() {}
 
