@@ -12,9 +12,9 @@ interface AuthState {
 }
 
 const initialState: AuthState = {
-  user: null,
-  token: null,
-  isAuthenticated: false,
+  user: authService.getCurrentUser(),
+  token: authService.getToken(),
+  isAuthenticated: authService.isAuthenticated(),
   loading: false,
   error: null
 }

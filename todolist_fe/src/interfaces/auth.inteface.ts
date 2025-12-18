@@ -14,3 +14,11 @@ export interface LoginResponse {
   message: string;
   data: string;
 }
+
+
+export interface DecodeToken {
+  id: string;
+  name: string;
+  email: string;
+  rol: string;
+}

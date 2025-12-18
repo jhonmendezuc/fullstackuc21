@@ -1,9 +1,8 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./components/login/Login"
 import Task from "./components/task/Task"
-import NotFound from "./components/commons/NotFound"
 import type { CSSProperties } from "react"
-
+import ProtectedRoute from "./components/commons/ProtectedRouter"
 
 const footerStyles: CSSProperties = {
   position: 'fixed',
@@ -21,8 +20,12 @@ function App() {
       <Router>
         <Routes>
           <Route path="/login" element={<Login />} />
-          <Route path="/task" element={<Task />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/" element={
+            <ProtectedRoute>
+              <Task />
+            </ProtectedRoute>
+          } />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Router>
       <footer style={footerStyles}>

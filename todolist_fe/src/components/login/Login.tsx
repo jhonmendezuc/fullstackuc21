@@ -6,6 +6,7 @@ import Container from "@mui/material/Container"
 import Typography from "@mui/material/Typography"
 import Box from "@mui/material/Box"
 import Alert from "@mui/material/Alert"
+import Notification from "../commons/Notification"
 import type { CSSProperties } from "react"
 
 /*navegacion*/
@@ -14,7 +15,7 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import type { RootState, AppDispatch } from "../../store/store"
 import { loginUser } from "../../store/auth.slice"
-
+import type { AlertColor } from "@mui/material"
 
 
 const BoxStyles: CSSProperties = {
@@ -32,10 +33,14 @@ function Login() {
   const { loading, error, isAuthenticated } = useSelector((state: RootState) => state.auth)
   const navigate = useNavigate()
 
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [severity, setSeverity] = useState<AlertColor>("error");
+
 
   useEffect(() => {
     if (isAuthenticated) {
-      navigate("/task")
+      navigate("/")
     }
 
   }, [isAuthenticated, navigate])
@@ -44,7 +49,16 @@ function Login() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     dispatch(loginUser({ email, password }))
+    setOpen(true);
+    setMessage(error || "Error al iniciar sesión");
+    setSeverity("error");
   }
+
+  const handleClose = () => {
+    setOpen(false);
+    setMessage("");
+    setSeverity("error");
+  };
 
   return (
     <Container maxWidth="xs">
@@ -70,7 +84,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {error && <Alert severity="error">Error al iniciar sesión</Alert>}
+          <Notification open={open} message={message} severity={severity} onClose={handleClose} />
           <Button variant="contained" color="primary" type="submit">
             {loading ? " Cargando..." : "Iniciar Sesión"}
           </Button>
