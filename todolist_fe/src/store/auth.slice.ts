@@ -1,15 +1,8 @@
 /* reducers y los accions para autenticacion */
 import authService from "../services/auth.service";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import type { LoginRequest, User } from "../interfaces/auth.inteface";
+import type { LoginRequest, User, AuthState } from "../interfaces/auth.inteface";
 
-interface AuthState {
-  user: User | null;
-  token: string | null;
-  isAuthenticated: boolean;
-  loading: boolean;
-  error: string | null;
-}
 
 const initialState: AuthState = {
   user: authService.getCurrentUser(),

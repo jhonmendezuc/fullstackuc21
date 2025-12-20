@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom"
 import Login from "./components/login/Login"
-import Task from "./components/task/Task"
+import TaskList from "./components/task/TaskList"
 import type { CSSProperties } from "react"
 import ProtectedRoute from "./components/commons/ProtectedRouter"
 
@@ -22,7 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/" element={
             <ProtectedRoute>
-              <Task />
+              <TaskList />
             </ProtectedRoute>
           } />
           <Route path="*" element={<Navigate to="/" replace />} />
